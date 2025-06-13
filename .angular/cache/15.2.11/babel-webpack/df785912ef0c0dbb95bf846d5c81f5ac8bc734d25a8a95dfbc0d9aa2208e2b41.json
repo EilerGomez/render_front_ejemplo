@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class MyTable {\n  constructor(id, nombre, edad, parentesco) {\n    this.id = id;\n    this.nombre = nombre;\n    this.edad = edad;\n    this.parentesco = parentesco;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
