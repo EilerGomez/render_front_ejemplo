@@ -1,79 +1,76 @@
-
 <div class="container mt-5 pt-5">
-    <!-- Formulario para agregar nueva persona -->
-    <div class="card mb-4">
-        <div class="card-header bg-primary text-white">
-            <h4>Agregar Nueva Persona</h4>
-        </div>
-        <div class="card-body">
-            <form (ngSubmit)="guardar()" #personaForm="ngForm">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" 
-                                   [(ngModel)]="nuevaPersona.nombre" 
-                                   name="nombre" required>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="edad">Edad</label>
-                            <input type="number" class="form-control" id="edad" 
-                                   [(ngModel)]="nuevaPersona.edad" 
-                                   name="edad" required min="1">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="parentesco">Parentesco</label>
-                            <select class="form-control" id="parentesco" 
-                                    [(ngModel)]="nuevaPersona.parentesco" 
-                                    name="parentesco" required>
-                                <option value="">Seleccione...</option>
-                                <option value="Padre">Padre</option>
-                                <option value="Madre">Madre</option>
-                                <option value="Hijo/a">Hijo/a</option>
-                                <option value="Hermano/a">Hermano/a</option>
-                                <option value="Otro">Otro</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-2 d-flex align-items-end">
-                        <button type="submit" class="btn btn-success btn-block" 
-                                [disabled]="!personaForm.valid">
-                            <i class="fas fa-save"></i> Guardar
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+  <!-- Formulario -->
+  <div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+      <h4>Agregar Nueva Persona</h4>
     </div>
+    <div class="card-body">
+      <form (ngSubmit)="guardar()" #personaForm="ngForm">
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 mb-3">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre"
+                   [(ngModel)]="nuevaPersona.nombre" name="nombre" required>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mb-3">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad"
+                   [(ngModel)]="nuevaPersona.edad" name="edad"
+                   required min="1">
+          </div>
+          <div class="col-12 col-sm-6 col-md-3 mb-3">
+            <label for="parentesco">Parentesco</label>
+            <select class="form-control" id="parentesco"
+                    [(ngModel)]="nuevaPersona.parentesco"
+                    name="parentesco" required>
+              <option value="">Seleccione...</option>
+              <option value="Padre">Padre</option>
+              <option value="Madre">Madre</option>
+              <option value="Hijo/a">Hijo/a</option>
+              <option value="Hermano/a">Hermano/a</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2 mb-3 d-flex align-items-end">
+            <button type="submit"
+                    class="btn btn-success btn-block"
+                    [disabled]="!personaForm.valid">
+              <i class="fas fa-save"></i> Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 
-    <!-- Tabla de personas existentes -->
-    <div class="card">
-        <h3>Totales ({{obj.length}}) </h3>
-        
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Codigo</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Parentesco</th>
-                    <th class="text-center">ACCIONES</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let b of obj; let i = index">
-                    <td>{{b.id}}</td>
-                    <td>{{b.nombre}}</td>
-                    <td>{{b.edad}}</td>
-                    <td>{{b.parentesco}}</td>
-                    <td class="text-center">
-                    </td>
-                </tr>
-            </tbody>
+  <!-- Tabla responsiva -->
+  <div class="card">
+    <div class="card-body">
+      <h5>Totales ({{ obj.length }})</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered mb-0">
+          <thead class="thead-light">
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Parentesco</th>
+              <th class="text-center">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let b of obj; let i = index">
+              <td>{{ b.id }}</td>
+              <td>{{ b.nombre }}</td>
+              <td>{{ b.edad }}</td>
+              <td>{{ b.parentesco }}</td>
+              <td class="text-center">
+                <!-- botones de acción -->
+              </td>
+            </tr>
+          </tbody>
         </table>
+      </div>
     </div>
+  </div>
 </div>
