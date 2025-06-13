@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Compra {\n  constructor() {\n    this.codigo = NaN;\n    this.sucursal = NaN;\n    this.fecha = '';\n    this.total_compra = NaN;\n    this.usuario = NaN;\n  }\n}","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
