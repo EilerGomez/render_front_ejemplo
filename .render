@@ -1,0 +1,5 @@
+type: web
+name: angular-server
+env: node
+startCommand: npm start
+buildCommand: npm run build
