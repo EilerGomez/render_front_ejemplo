@@ -8,7 +8,7 @@ import { MyTable } from '../Modelo/mytable';
 export class ServiciotableService {
 
   constructor(private http: HttpClient) { }
-  Url='https://render-back-ejemplo.onrender.com/personas';
+  Url='https://render-back-ejemplo-ejxi.onrender.com/personas';
   getTable(){
     return this.http.get<MyTable[]>(`${this.Url}`);
   }

@@ -36,7 +36,7 @@ export class AreatablesComponent {
     this.sucursal = usuario? usuario.sucursal: 0;
     
     return this.sucursal;*/
-    return "Administrador de todas las sucursales";
+    return "Administrador de personas";
   }
   getEmail(){
     let stringUser = localStorage.getItem('usuario');
