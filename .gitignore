@@ -1,2 +1,7 @@
-FRONT_Render.angular/cache/
 .angular/*
+# Node
+node_modules/
+
+# IDEs y editores
+.vscode/
+.idea/
